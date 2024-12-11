@@ -3,7 +3,7 @@ import useStore from './useStore';
 
 const CountSubscriber = () => {
   const count = useStore((state) => state.count); // count만 구독
-  console.log('CountSubscriber Rendered'); // 렌더링 확인 로그
+  console.log('CountSubscriber'); // 렌더링 확인 로그
 
   return (
     <div>

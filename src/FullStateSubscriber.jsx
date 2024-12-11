@@ -3,7 +3,7 @@ import useStore from './useStore';
 
 const FullStateSubscriber = () => {
   const store = useStore(); // 전체 상태 구독
-  console.log('FullStateSubscriber Rendered'); // 렌더링 확인 로그
+  console.log('FullStateSubscriber'); // 렌더링 확인 로그
 
   return (
     <div>
