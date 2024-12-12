@@ -2,7 +2,9 @@ import React from 'react';
 import useStore from './useStore';
 
 const CountSubscriber = () => {
-  const count = useStore((state) => state.count); // count만 구독
+  const count = useStore((state) => state.count); // count 구독
+  // 코드 추가
+  const price = useStore((state) => state.price); // price 구독
   console.log('CountSubscriber'); // 렌더링 확인 로그
 
   return (

@@ -1,29 +1,26 @@
-import React from 'react';
-import FullStateSubscriber from './FullStateSubscriber';
+import FullSubscriber from './FullSubscriber';
 import CountSubscriber from './CountSubscriber';
-import Actions from './Actions';
 import useStore from './useStore'; // Zustand 스토어 import
 
 const App = () => {
-  const states = useStore(); // count 상태 구독
-  console.log(states)
-  // const setCount = useStore((selector) => selector.setCount); // setCount 함수 구독
+  const increaseCount = useStore((state) => state.increaseCount); // count 업데이트 액션
+  const updateText = useStore((state) => state.updateText); // text 업데이트 액션
+  // 코드 추가
+  const increasePrice = useStore((state) => state.increasePrice); // count 업데이트 액션
 
-  // return (
-  //   <>
-  //   <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      // <h1>state: {JSON.stringify(states)}</h1>
-  //     <button onClick={setCount}>Increment and Replace State</button>
-  //   </div>
-  //   <div>
-  //     <h1>Zustand Selector Test</h1>
-  //     <Actions />
-  //     <FullStateSubscriber />
-  //     <CountSubscriber />
-  //   </div>
-  //   </>
-  // );
-  return <div>가나다</div>
+  return (
+    <div style={{padding: "50px"}}>
+      <h1>Zustand Selector Test</h1>
+      <div>
+          <button onClick={increaseCount}>Increase Count</button>
+          <button onClick={() => updateText('Hello World!')}>Update Text</button>
+          {/* 코드 추가 */}
+          <button onClick={increasePrice}>Increase Price</button>
+      </div>
+      <FullSubscriber />
+      <CountSubscriber />
+    </div>
+  );
 };
 
 export default App;
